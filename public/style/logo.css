@@ -1,0 +1,38 @@
+.logo_navigation__logo {
+    width: 50px;
+}
+
+.logo_navigation__section {
+    position: relative;
+}
+
+.logo_navigation__slogan {
+    position: absolute;
+    top: 40px;
+    left: -11px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #035252;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 14px;
+}
+
+.logo_navigation__slogan:hover{
+    border-bottom: solid 1px #035252;
+}
+
+.logo_login {
+    width: 92%;
+
+}
+
+.logo_login__img {
+    width: 100%
+}
+
+
+@media screen and (max-width: 800px) {
+    .logo_navigation__section {
+        display: none;
+    }
+}

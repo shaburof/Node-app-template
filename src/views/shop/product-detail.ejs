@@ -1,0 +1,22 @@
+<%- include('../includes/header')%>
+
+<h1 class="textCenter"><%= product.title %></h1>
+<hr>
+<h2 class="font24 details__place textCenter">Price:
+    <span class="details__text"><%= product.price %>$</span>
+</h2>
+<div class="details__img">
+    <% if(product.file) {%>
+    <img class="blockCenter" src="<%=product.file%>" alt="<%= product.title %>">
+    <% }else{ %>
+        <img src="/images/books/empty.png" alt="empty">
+    <% } %>
+</div>
+<h2 class="font24 details__place textCenter">Description:
+    <span class="details__text"><%= product.description %></span>
+</h2>
+<div class="card__action textCenter">
+    <button type="button" data_productid="<%= product.id %>" class="btn card__btn">Add to Card</button>
+</div>
+
+<%-include('../includes/footer')%>

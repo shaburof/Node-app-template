@@ -1,0 +1,26 @@
+<% if( ses('message')){%>
+    <h1>old message in message.ejs file</h1>
+    <div class="message <%= ses('messageType')%>" id="message">
+        <div class="message__btn" id="message__btn">
+            <div class="message__btn--x">x</div>
+        </div>
+        <p class="message__text">
+            <%= ses('message')%>
+        </p>
+    </div>
+<% }%>
+
+<% if( flash('show_message')){%>
+    <div class="message <%= flash('message_type')%>" id="message">
+        <div class="message__btn" id="message__btn">
+            <div class="message__btn--border"></div>
+            <div class="message__btn--x <%= flash('message_type')%>">
+                <span class="message__btn--x1"></span>
+                <span class="message__btn--x2"></span>
+            </div>
+        </div>
+        <p class="message__text">
+            <%= flash('message')%>
+        </p>
+    </div>
+<% }%>

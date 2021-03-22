@@ -1,0 +1,25 @@
+@import url('/style/card.css');
+@import url('/style/hamburger.css');
+@import url('/style/message.css');
+@import url('/style/ProductDetails.css');
+@import url('/style/cart.css');
+@import url('/style/order.css');
+@import url('/style/login.css');
+@import url('/style/logo.css');
+@import url('/style/paginate.css');
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 800px) {
+    .grid {
+        justify-content: center;
+    }
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}

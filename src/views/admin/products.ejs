@@ -1,0 +1,14 @@
+<%- include('../includes/header')%>
+<% if(prods.data.length>0) {%>
+<div class="grid">
+    <% for (const prod of prods.data) { %>
+    <%- include('../util/card-admin',{prod})%>
+    <% } %>
+</div>
+<div class="mt30 mb30">
+    <%- include('../UI/paginate',{paginate:prods})%>
+</div>
+<% } else {%>
+<h1 class="center font32">No Products Found!</h1>
+<% } %>
+<%-include('../includes/footer')%>

@@ -1,0 +1,15 @@
+<%- include('../includes/header')%>
+
+<% if(orders.length===0) {%>
+<h1 class="orders mt20 textCenter">No orders</h1>
+<% } else { %>
+<div class="orders mt20">
+    <% for (const order of orders) { %>
+        <%- include('../includes/order.ejs',{order:order}) %>
+    <% }  %>
+
+</div>
+<% }  %>
+
+
+<%-include('../includes/footer')%>

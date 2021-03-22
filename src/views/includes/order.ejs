@@ -1,0 +1,20 @@
+<div class="order font18" id="orderId<%=order.orderNo %>">
+    <div class="order__no">Order No: <%= order.orderNo %></div>
+    <ul class="order__prods">
+        <% for (const product of order.products) { %>
+            <li class="order__prod">
+                <div class="order__prod_title"><%= product.title %></div>
+                <div class="order__prod_quantity font16">quantity: <%= product.quantity %></div>
+                <div class="order__prod_quantity font16">price by item: <%= product.price %>$</div>
+            </li>
+        <% }  %>
+    </ul>
+    <div class="order__result">
+        <div class="order__date font16"><%= order.date %></div>
+        <div class="order__total">Total: <%= order.total %>$</div>
+        <div class="order__buttons">
+            <a href="/orders/download/<%=order.orderNo %>" class="btn mt20">DOWNLOAD</a>
+            <button data_orderid="<%=order.orderNo %>" class="btn mt20">DELETE ORDER</button>
+        </div>
+    </div>
+</div>

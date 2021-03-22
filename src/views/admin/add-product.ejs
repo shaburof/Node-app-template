@@ -1,0 +1,30 @@
+<%- include('../includes/header')%>
+    <form class="form" action="/admin/store-product" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrf" value="<%=csrf%>">
+        <div class="input-field">
+            <label class="input-field-label">Title</label>
+            <input class="input <%=error('title')%>" type="text" name="title" value="<%=old('title')%>"/>
+        </div>
+        <div class="input-field">
+            <label class="input-field-label">Description</label>
+            <textarea class="input <%=error('description')%>" name="description" id="description" rows="5"><%=old('description')%></textarea>
+        </div>
+        <div class="input-field">
+            <label class="input-field-label">Price</label>
+            <input class="input <%=error('price')%>" type="number" name="price" step=".01" value="<%=old('price')%>"/>
+        </div>
+        <div class="input-field">
+            <label class="input-field-label input-field-label--inline">Best Price</label>
+        <% if(old('bestPrice')==='on') { %>
+                <input type="checkbox" name="bestPrice" checked />
+        <%} else {%>
+                <input type="checkbox" name="bestPrice" />
+        <%} %>
+        </div>
+        <div class="input-field">
+            <label class="input-field-label">Image</label>
+            <input class="input" type="file" name="file">
+        </div>
+        <button class="btn" type="submit">SUBMIT</button>
+    </form>
+<%- include('../includes/footer')%>

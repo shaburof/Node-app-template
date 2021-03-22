@@ -1,0 +1,21 @@
+<% if(paginate.showPaginate) { %> 
+    <section class="paginate">
+        <a href="<%= paginate.prev_page_url %>" class="paginate__item paginate__button">
+            <span class="paginate__button-element"><</span>
+        </a>
+        <div class="paginate__list">
+            <% for(let i=1, j=paginate.current_page-1; i<=paginate.paginate_length; i++, j++) {%> 
+                <% if(j > paginate.last_page) { continue; }%>
+                <% if(j===0) { j++; }%>
+                <% if(j===paginate.current_page) {%>
+                    <a class="paginate__item paginate__item--active" style="font-weight: bold;" href="<%= paginate.linkTemplate+j %>"><%= j %></a>
+                <% }else {%> 
+                    <a class="paginate__item" href="<%= paginate.linkTemplate+j %>"><%= j %></a>
+                <% } %> 
+            <% } %>
+        </div>
+        <a href="<%= paginate.next_page_url %>" class="paginate__item paginate__button">
+            <span class="paginate__button-element">></span>
+        </a>
+    </section>
+<% } %> 

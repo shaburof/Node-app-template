@@ -1,0 +1,13 @@
+HOST='127.0.0.1'
+PROTOCOL='http'
+DB_HOST='127.0.0.1'
+DB_DATABASE='db name'
+DB_USER=root
+DB_PASSW=12345
+PORT=8080
+MAIL_HOST='smtp.example-server.com'
+MAIL_PORT=1234
+MAIL_USER='mail-user-name'
+MAIL_PASS='12345'
+MAIL_FROM='service@example.com'
+MAIL_FROM_NAME='Example'

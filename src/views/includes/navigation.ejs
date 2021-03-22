@@ -1,0 +1,49 @@
+<header class="main-header">
+    <div class="hbtn">
+        <p class="hbtn__row" id="hrow1"></p>
+        <p class="hbtn__row" id="hrow2"></p>
+        <p class="hbtn__row" id="hrow3"></p>
+    </div>
+    <nav class="main-header__nav">
+        <ul class="main-header__nav-list">
+            <li class="main_header__nav--item logo_navigation__section">
+                <a href="/">
+                    <img class="logo_navigation__logo" src="/images/white-logo.png" alt="logo">
+                    <p class="logo_navigation__slogan">BOOK SHOP</p>
+                </a>
+            </li>
+            <li class="main_header__nav--item header__shop_item"><a id="/" class="<%= active('/') %>" href="/">Shop</a>
+            </li>
+
+            <li class="main_header__nav--item"><a class="<%= active('/products') %>" href="/products">Products</a></li>
+            <% if(isLogin) {%>
+                <li class="main_header__nav--item"><a class="<%= active('/cart') %>" href="/cart">Cart</a></li>
+                <li class="main_header__nav--item"><a class="<%= active('/orders') %>" href="/orders">Orders</a>
+                </li>
+                <li class="main_header__nav--item"><a class="<%= active('/admin/add-product') %>"
+                        href="/admin/add-product">Add
+                        Product</a></li>
+                <% } %>
+                    <% if(isAdmin) {%>
+                        <li class="main_header__nav--item"><a class="<%= active('/admin/products') %>"
+                                href="/admin/products">Admin
+                                Products</a></li>
+                        <li class="main_header__nav--item"><a class="<%= active('/admin/clear-products') %>"
+                                href="/admin/clear-product">Clear
+                                Product</a></li>
+                        <li class="main_header__nav--item"><a class="<%= active('/admin/create-dummy-products') %>"
+                                href="/admin/create-dummy-products">Create Dummy
+                                Products</a></li>
+                        <% } %>
+                            <% if(!isLogin) {%>
+                                <li class="main_header__nav--item main_header__nav--rightside">
+                                    <a class="<%= active('/login') %>" href="/login">Login</a>
+                                </li>
+                                <% }else{ %>
+                                    <li class="main_header__nav--item main_header__nav--rightside">
+                                        <a href="/logoff">Logoff</a>
+                                    </li>
+                                    <% } %>
+        </ul>
+    </nav>
+</header>

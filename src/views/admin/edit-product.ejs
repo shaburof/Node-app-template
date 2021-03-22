@@ -1,0 +1,39 @@
+<%- include('../includes/header')%>
+<form class="form" action="/admin/edit-product" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="csrf" value="<%=csrf%>">
+    <input type="hidden" name="id" value="<%= prod.id %>">
+    <div class="input-field">
+        <label class="input-field-labe">Title</label>
+        <input class="input <%=error('title')%>" type="text" name="title" value="<%=prod.title%>" />
+    </div>
+    <div class="input-field">
+        <label class="input-field-label">Description</label>
+        <textarea class="input <%=error('description')%>" name="description" id="description" rows="5"><%=prod.description%></textarea>
+    </div>
+    <div class="input-field">
+        <label class="input-field-label">Price</label>
+        <input class="input <%=error('price')%>" type="number" name="price" step=".01" value="<%=prod.price%>" />
+    </div>
+    <div class="input-field">
+        <label class="input-field-label input-field-label--inline">Best Price</label>
+        <% if(prod.bestprice===1) { %>
+        <input type="checkbox" name="bestPrice" checked />
+        <%} else {%>
+        <input type="checkbox" name="bestPrice" />
+        <%} %>
+    </div>
+    <div class="card__image card__image--width100">
+        <img src="<%= prod.file %>" alt="<%= prod.title %>">
+        <% if(!prod.file.includes('empty.png')) {%>
+        <label class="input-field-label input-field-label--inline">Remove Image</label>
+        <input type="checkbox" name="removeImage" />
+        <% }%>
+    </div>
+
+    <div class="input-field">
+        <label class="input-field-label">Image</label>
+        <input class="input" type="file" name="file">
+    </div>
+    <button class="btn" type="submit">UPDATE</button>
+</form>
+<%-include('../includes/footer')%>

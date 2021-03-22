@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .service {
+            font-size: 16px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Helvetica, sans-serif;
+        }
+
+        .service__headline {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            text-align: center;
+            margin: 0;
+            background-color: #72b13f;
+            font-weight: normal;
+            color: white;
+            padding: 2px 0;
+        }
+
+        .service__title {
+            height: 300px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .service__title_text {
+            color: #c17c3a;
+            margin: 0;
+            font-size: 5em;
+            text-align: center;
+        }
+
+        .service__img_container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: auto;
+            flex-grow: 1;
+            height: 300px;
+            padding-right: 50px;
+            padding-bottom: 50px;
+        }
+
+        .service__img {
+            width: 290px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .service {
+                font-size: 15px;
+            }
+
+            .service__title {
+                align-items: center;
+            }
+
+            .service__img_container {
+                padding-right: unset;
+                /* padding-bottom: unset; */
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .service {
+                font-size: 10px;
+            }
+
+            .service__headline {
+                font-size: 1.4em;
+            }
+
+            .service__title_text {
+                text-shadow: unset;
+            }
+
+            .service__img_container {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="service">
+        <h1 class="service__headline">Apparently there is some kind of malfunction on our server. We will fix everything
+            soon and you will continue to enjoy our beautiful site)</h1>
+        <div class="service__title">
+            <h1 class="service__title_text">We're sorry. But service not avaliable</h1>
+        </div>
+        <div class="service__img_container">
+            <img class="service__img" src="/images/service.png" alt="not avaliable image">
+        </div>
+    </section>
+</body>
+
+</html>

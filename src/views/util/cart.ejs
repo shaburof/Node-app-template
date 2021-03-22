@@ -1,0 +1,24 @@
+<div class="cart">
+    <div class="cart__item cart__title">product title: <span class="title__value"><%= prod.title %></span></div>
+    <div class="cart__item cart__price">price: <span class="title__value"><%= prod.price %> $</span></div>
+    <div class="cart__item cart__count">
+        <form action="/addcart" method="POST" style="display: inline;">
+            <input type="hidden" name="id" value="<%= prod.id %>">
+            <input type="hidden" name="csrf" value="<%= csrf %>">
+            <button type="submit" class="btn card__btn font18">+</button>
+        </form>
+        <span class="count__value"><%= prod.count %></span>
+        <form action="/deletecart" method="POST" style="display: inline;">
+            <input type="hidden" name="csrf" value="<%= csrf %>">
+            <input type="hidden" name="id" value="<%= prod.id %>">
+            <button type="submit" class="btn card__btn font18">-</button>
+        </form>
+    </div>
+    <form action="/purgecart" method="POST">
+        <input type="hidden" name="id" value="<%= prod.id %>">
+        <input type="hidden" name="csrf" value="<%= csrf %>">
+        <div class="cart__icon">
+            <img src="/images/clearcart.png" alt="clear cart" onclick="submit()">
+        </div>
+    </form>
+</div>

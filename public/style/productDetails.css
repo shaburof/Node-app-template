@@ -1,0 +1,33 @@
+.details__img {
+    height: 500px;
+    max-width: 95%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.details__img img {
+    display: block;
+    height: 100%;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    .details__img {
+        height: unset;
+
+    }
+
+    .details__img img {
+        width: 100%;
+    }
+}
+
+.details__place {
+    color: black;
+}
+
+.details__text {
+    font-weight: normal;
+    color: #005252;
+}

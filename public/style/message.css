@@ -1,0 +1,83 @@
+.message {
+    padding: 10px;
+    width: calc(100vw - 5%);
+    border-radius: 5px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    border: solid 2px rgba(0, 0, 0, .2);
+}
+
+.message__text {
+    color: white;
+    text-align: center;
+}
+
+.message__btn {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.message__btn--border {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50%;
+    border: solid 2px rgba(0, 0, 0, .2);
+}
+
+.message__btn--x {
+    position: absolute;
+    left: 2px;
+    top: 9px;
+    transform: scaleY(.8);
+}
+
+.message__btn--x1 {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: black;
+    transform: rotateZ(55deg);
+}
+
+.message__btn--x2 {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: black;
+    transform: rotateZ(-55deg);
+}
+
+.message.message--info .message__btn--x1,.message.message--info .message__btn--x2{
+    background-color: #066715;
+}
+.message.message--warning  .message__btn--x1,.message.message--warning .message__btn--x2{
+    background-color: #af701e;
+}
+.message.message--error  .message__btn--x1,.message.message--error .message__btn--x2{
+    background-color: #af0b10;
+}
+
+.message--info {
+    background-color: green;
+}
+
+.message--warning {
+    background-color: orange;
+}
+
+.message--error {
+    background-color: red;
+}

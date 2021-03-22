@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/utility.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/form&button.css">
+</head>
+
+<body>
+    <section style="font-family: Helvetica, sans-serif;">
+        <section style="padding: 15px; padding-bottom: 5px">
+            <img style="width: 52px;" src="images/color-logo.png" alt="logo">
+            <h1 style="color: #005252; margin: 0;display:inline-block;font-size: 24px; padding-left: 10px;">BookShop</h1>
+        </section>
+        <hr>
+        <div class="orders mt20">
+            <div class="order font18">
+                <div class="order__no">Invoce No: <%= order.orderNo %></div>
+                <ul class="order__prods">
+                    <% for (const product of order.products) { %>
+                        <li class="order__prod">
+                            <div class="order__prod_title"><%= product.title %></div>
+                            <div class="order__prod_quantity font16">quantity: <%= product.quantity %></div>
+                            <div class="order__prod_quantity font16">price by item: <%= product.price %>$</div>
+                        </li>
+                    <% }  %>
+                </ul>
+                <div class="order__result">
+                    <div class="order__date font16"><%= order.date %></div>
+                    <div class="order__total">Total: <%= order.total %>$</div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>

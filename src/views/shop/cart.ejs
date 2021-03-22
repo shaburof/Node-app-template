@@ -1,0 +1,25 @@
+<%- include('../includes/header')%>
+
+<h1 class="textCenter font28">Cart</h1>
+<% if(!cartIsEmpty) { %>
+<h2>total price: <%= cart.totalPrice %>$</h2>
+<h2>total count: <%= cart.totalCount %></h2>
+<% for (const prod of cart.products) { %>
+<section class="carts blockCenter">
+    <%-include('../util/cart.ejs',{prod})%>
+</section>
+<% } %>
+<div class="mt10">
+    <a href="/clearcart" type="submit" class="btn card__btn">CLEAR CART</a>
+</div>
+<div class="mt20">
+    <a href="/makeorder" type="submit" class="btn card__btn">GET ORDER</a>
+</div>
+<% }else { %>
+<div class="cart__empty">
+    <img src="/images/emptycart.png" alt="emptycart">
+    <h1>is empty</h1>
+</div>
+<% }%>
+
+<%-include('../includes/footer')%>

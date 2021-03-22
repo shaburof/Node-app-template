@@ -1,0 +1,26 @@
+<article class="card" id="productCardId<%= prod.id %>">
+    <% if(prod.bestprice===1) {%>
+        <div class="card__bestPrice-Place">
+            <span class="card__bestPrice--back"></span>
+            <div class="card__bestPrice">BEST<br/>PRICE<br/>!</div>
+        </div>
+    <% }%>
+    <header class="card__header">
+        <h1 class="product__title"><%= prod.title %></h1>
+    </header>
+    <div class="card__image">
+            <img src="<%= prod.file %>" alt="<%= prod.title %>">
+    </div>
+    <div class="card__content">
+        <h2 class="product__price"><%= prod.price %>$</h2>
+        <p class="product__description"><%= prod.description %></p>
+    </div>
+    <div class="card__buttons_place">
+        <div class="card__action">
+            <% if(typeof showDetails!=='undefined' && showDetails===true){%>
+                <a href="/products/<%=prod.id%>" class="btn card__btn">Details</a>
+            <% }%>
+            <button type="button" data_productid="<%= prod.id %>" class="btn card__btn">Add to Card</button>
+        </div>
+    </div>
+</article>

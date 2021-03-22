@@ -1,0 +1,70 @@
+<%- include('../includes/header')%>
+<div class="login blockCenter mt20">
+    <div class="logo_login blockCenter">
+        <img class="logo_login__img" src="/images/full-logo.png" alt="logo">
+    </div>
+    <div class="login__title"><%= title %></div>
+    <form action="<%= action %>" method="POST">
+        <input type="hidden" name="csrf" value="<%=csrf%>">
+        <% if(!isSignUp) { %>
+        <div class="input-field login__inputfield">
+            <input class="input login__input <%= error('email') %>" autocomplete="on" type="text" name="email" placeholder="Email"
+                value="<%= old('email') %>" />
+            <div class="login__icon">
+                <img src="/images/email-icon.png" alt="">
+            </div>
+        </div>
+        <div class="input-field login__inputfield">
+            <input class="input login__input <%= error('password') %>" type="password" 
+            autocomplete="off" name="password" placeholder="*******"/>
+            <div class="login__icon login__icon--password">
+                <img src="/images/password-icon.png" alt="">
+            </div>
+        </div>
+        <% } else { %>
+        <div class="input-field login__inputfield">
+            <input class="input login__input <%= error('name') %>" type="text" autocomplete="off" name="name" placeholder="name" value="<%= old('name') %>" />
+            <div class="login__icon">
+                <img src="/images/user-icon.png" alt="">
+            </div>
+        </div>
+        <div class="input-field login__inputfield">
+            <input class="input login__input <%= error('email') %>" type="text" autocomplete="off" name="email" placeholder="Email"
+                value="<%= old('email') %>" />
+            <div class="login__icon">
+                <img src="/images/email-icon.png" alt="">
+            </div>
+        </div>
+        <div class="input-field login__inputfield">
+            <input class="input login__input <%= error('password') %>" type="password" autocomplete="off" name="password" placeholder="password"
+                value="<%= old('password') %>" />
+            <div class="login__icon login__icon--password">
+                <img src="/images/password-icon.png" alt="">
+            </div>
+        </div>
+        <div class="input-field login__inputfield mb50">
+            <input class="input login__input  <%= error('password2') %>" type="password" autocomplete="off" name="password2" placeholder="confirm password" %>" />
+            <div class="login__icon login__icon--password">
+                <img src="/images/password-icon.png" alt="">
+            </div>
+        </div>
+        <% }  %>
+
+        <% if(!isSignUp) { %>
+        <div class="input-field login__inputfield">
+            <% if(old('rememberme')) {%> 
+                <input type="checkbox" name="rememberme" checked>
+            <% } else { %>
+                <input type="checkbox" name="rememberme">
+            <% } %>
+            <label class="input-field-label login__label">Remember me</label>
+        </div>
+        <% } %>
+        <button class="btn login__btn" type="submit"><%= title %></button>
+    </form>
+    <% if(!isSignUp) { %>
+    <div class="login__footer center">Not a member? <a href="/signup">Sign up now</a></div>
+    <div class="login__resetpassword"><a href="/resetpassword">Forgot password?</a></div>
+    <% } %>
+</div>
+<%-include('../includes/footer')%>
